@@ -94,7 +94,7 @@ namespace Mathematics.Geometry
 
         public override int GetHashCode() => base.GetHashCode();
 
-        #endregion // operator
+        #endregion // operators
 
         public void Normalize()
         {

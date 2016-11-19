@@ -220,7 +220,7 @@ namespace Mathematics.Geometry
                 {-m.M21, -m.M22}
             } );
 
-        #endregion // operator
+        #endregion // operators
 
         bool SetContents( double[,] contents )
         {
