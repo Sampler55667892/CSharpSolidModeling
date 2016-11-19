@@ -1,4 +1,5 @@
-﻿using Mathematics.Geometry;
+﻿using System.Linq;
+using Mathematics.Geometry;
 using Solid;
 
 namespace SolidModeling
@@ -19,14 +20,8 @@ namespace SolidModeling
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>
-        public Edge FindEdge( Vertex v )
-        {
-            foreach (var e in base.Linked) {
-                if (v == e.GetOppositeVertex( this ))
-                    return e;
-            }
-            return null;
-        }
+        public Edge FindEdge( Vertex v ) =>
+            base.Linked.FirstOrDefault( e => v == e.GetOppositeVertex( this ) );
 
         /// <summary>
         /// 頂点の座標を行列変換します

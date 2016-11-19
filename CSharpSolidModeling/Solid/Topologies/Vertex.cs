@@ -13,15 +13,7 @@ namespace Solid
         /// <summary>
         /// バーテックスに接続しているエッジを列挙します
         /// </summary>
-        public IEnumerable<Edge> Linked
-        {
-            get {
-                if (linked != null) {
-                    foreach (var e in linked)
-                        yield return e;
-                }
-            }
-        }
+        public IEnumerable<Edge> Linked => this.linked;
 
         /// <summary>
         /// バーテックスに接続しているエッジの数を取得します

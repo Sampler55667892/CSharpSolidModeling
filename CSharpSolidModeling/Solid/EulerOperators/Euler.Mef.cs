@@ -51,18 +51,16 @@ namespace Solid
         Loop FindSeparableLoop( Edge prevLE, Edge prevRE, Edge nextLE, Edge nextRE )
         {
             // prev 側のループを集める
-            var prevLoops = new HashSet<Loop>();
-            foreach (var loop in new Loop[] { prevLE.Left.HostLoop, prevLE.Right.HostLoop,
-                prevRE.Left.HostLoop, prevRE.Right.HostLoop }) {
-                prevLoops.Add( loop );
-            }
+            var prevLoops = new HashSet<Loop> {
+                prevLE.Left.HostLoop, prevLE.Right.HostLoop,
+                prevRE.Left.HostLoop, prevRE.Right.HostLoop
+            };
 
             // next 側のループを集める
-            var nextLoops = new HashSet<Loop>();
-            foreach (var loop in new Loop[] { nextLE.Left.HostLoop, nextLE.Right.HostLoop,
-                nextRE.Left.HostLoop, nextRE.Right.HostLoop }) {
-                nextLoops.Add( loop );
-            }
+            var nextLoops = new HashSet<Loop> {
+                nextLE.Left.HostLoop, nextLE.Right.HostLoop,
+                nextRE.Left.HostLoop, nextRE.Right.HostLoop
+            };
 
             // 共通するループを特定する
             prevLoops.IntersectWith( nextLoops );
