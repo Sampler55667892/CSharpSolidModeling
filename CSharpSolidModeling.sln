@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathematics", "CSharpSolidModeling\Mathematics\Mathematics.csproj", "{CA4A5F52-BFE0-4918-A7BB-C4A102B16176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid", "CSharpSolidModeling\Solid\Solid.csproj", "{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176} = {CA4A5F52-BFE0-4918-A7BB-C4A102B16176}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidModeling", "CSharpSolidModeling\SolidModeling\SolidModeling.csproj", "{2B2435A2-B5F3-4ABE-8F14-31C928BE5840}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176} = {CA4A5F52-BFE0-4918-A7BB-C4A102B16176}
+		{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65} = {C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4A5F52-BFE0-4918-A7BB-C4A102B16176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B160FD-6FD0-43E6-91FE-DF7F82C5BF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2435A2-B5F3-4ABE-8F14-31C928BE5840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2435A2-B5F3-4ABE-8F14-31C928BE5840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2435A2-B5F3-4ABE-8F14-31C928BE5840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2435A2-B5F3-4ABE-8F14-31C928BE5840}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
