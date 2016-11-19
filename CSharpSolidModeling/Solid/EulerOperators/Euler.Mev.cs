@@ -9,7 +9,7 @@ namespace Solid
     {
         #region SpurEv
 
-        public Vertex SpurEv( Vector3d vPos, Vertex startV, Edge prevLE, Edge prevRE, out Edge newE )
+        public Vertex DoSpurEv( Vector3d vPos, Vertex startV, Edge prevLE, Edge prevRE, out Edge newE )
         {
             var endV = Archetype.NewVertex();
             endV.Position = vPos;
@@ -31,7 +31,7 @@ namespace Solid
                 lHalf.Next =
                 lHalf.Prev = rHalf;
                 rHalf.Next =
-                rHalf.Prev = lHalf ;
+                rHalf.Prev = lHalf;
                 // Link : loop -> halfedge
                 lHalf.HostLoop.First = lHalf;
                 // Reset Isolated
@@ -47,7 +47,7 @@ namespace Solid
                     newE.ConnectRight( rHalf );
 
                     lHalf.Next = rHalf;
-                    rHalf.Prev = lHalf ;
+                    rHalf.Prev = lHalf;
 
                     // Halfedge はそのリンクが自然になるようにつなげる
                     if (prevLE.Start == startV) {
@@ -157,7 +157,7 @@ namespace Solid
 
         #region SplitE
 
-        public Vertex SplitE( Vector3d vPos, Edge targetE, bool newVIsEnd, out Edge newE )
+        public Vertex DoSplitE( Vector3d vPos, Edge targetE, bool newVIsEnd, out Edge newE )
         {
             var middleV = Archetype.NewVertex();
             middleV.Position = vPos;

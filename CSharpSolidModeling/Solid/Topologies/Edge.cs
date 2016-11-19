@@ -17,7 +17,7 @@
         /// </summary>
         public Vertex End;
 
-        internal HalfEdge Left ;
+        internal HalfEdge Left;
         internal HalfEdge Right;
 
         #endregion  // Properties

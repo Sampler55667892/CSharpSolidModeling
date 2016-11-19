@@ -8,7 +8,7 @@
         #region Fields
 
         public Vector3d StartPoint;
-        public Vector3d EndPoint  ;
+        public Vector3d EndPoint;
 
         #endregion  // Fields
 
@@ -25,7 +25,7 @@
         public LineSegment( Vector3d startPoint, Vector3d endPoint )
         {
             this.StartPoint = startPoint;
-            this.EndPoint   = endPoint  ;
+            this.EndPoint = endPoint;
         }
 
         #region 幾何計算
@@ -46,7 +46,7 @@
             var factor =
                 Vector3d.DotProduct( intersection.Value - StartPoint, Vector ) /
                 Vector3d.DotProduct( Vector, Vector );
-            if (factor < 0.0 || 1.0 < factor)
+            if (factor < 0d || 1d < factor)
                 return null;
 
             return intersection.Value;

@@ -77,8 +77,8 @@ namespace Mathematics.Geometry
                 var basis = ComputeOrthonormalBasis();
 
                 // (2)
-                Vector3d normal = basis.Ez;
-                if (SignedArea < 0)
+                var normal = basis.Ez;
+                if (SignedArea < 0d)
                     normal = -normal;
 
                 return normal;
@@ -99,7 +99,7 @@ namespace Mathematics.Geometry
                 if (Points.Length == 3)
                     return true;
                 var plane = new Plane( this );
-                for (int i = 3; i < Points.Length; ++i) {
+                for (var i = 3; i < Points.Length; ++i) {
                     if (!plane.IsOn( Points[ i ] ))
                         return false;
                 }
@@ -115,7 +115,7 @@ namespace Mathematics.Geometry
         {
             get {
                 var approximatedPointSet = new HashSet<string>();
-                for (int i = 0; i < Points.Length; ++i) {
+                for (var i = 0; i < Points.Length; ++i) {
                     var approximatedPoint = Approximation.ToApproximatedString( Points[ i ] );
                     if (!approximatedPointSet.Add( approximatedPoint ))
                         return true;
@@ -171,7 +171,7 @@ namespace Mathematics.Geometry
             var sumAngle = 0d;
             for (var i = 0; i < Points.Length; ++i) {
                 var i_next = (i + 1) % Points.Length;
-                var angle  =
+                var angle =
                     Math.Acos(
                         Vector3d.DotProduct( vectors[ i ], vectors[ i_next ] ) /
                         (vectors[ i ].Norm * vectors[ i_next ].Norm) );

@@ -25,20 +25,20 @@ namespace Solid
 
             newE = Archetype.NewEdge();
             newE.ConnectStart( startV );
-            newE.ConnectEnd  ( endV   );
+            newE.ConnectEnd( endV );
 
             var newF = Archetype.NewFace();
             newL = Archetype.NewLoop();
 
             // Link
-            hostShell.Connect     ( newF );
-            newF     .ConnectFrame( newL );
+            hostShell.Connect( newF );
+            newF.ConnectFrame( newL );
 
             // ハーフエッジの Link を編集
             EditLinksOfHalfEdges( newE, prevLE, prevRE, nextLE, nextRE );
 
             // ループの更新 (Left を新規にする)
-            newE.Left .HostLoop = newL      ;
+            newE.Left.HostLoop = newL;
             newE.Right.HostLoop = separableL;
             UpdateNewLoopLinks( newE.Left, newL );
 
@@ -78,7 +78,7 @@ namespace Solid
         {
             var lHalf = new HalfEdge();
             var rHalf = new HalfEdge();
-            newE.ConnectLeft ( lHalf );
+            newE.ConnectLeft( lHalf );
             newE.ConnectRight( rHalf );
 
             // 始点側

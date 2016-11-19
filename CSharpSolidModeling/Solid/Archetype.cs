@@ -6,10 +6,10 @@
 
         public static void Set( Shell shell, Face face, Loop loop, Edge edge, Vertex vertex )
         {
-            shellArchetype  = shell ;
-            faceArchetype   = face  ;
-            loopArchetype   = loop  ;
-            edgeArchetype   = edge  ;
+            shellArchetype = shell;
+            faceArchetype = face;
+            loopArchetype = loop;
+            edgeArchetype = edge;
             vertexArchetype = vertex;
         }
 

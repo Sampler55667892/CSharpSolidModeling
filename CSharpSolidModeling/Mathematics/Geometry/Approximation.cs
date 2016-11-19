@@ -1,4 +1,6 @@
-﻿namespace Mathematics.Geometry
+﻿using System.Linq;
+
+namespace Mathematics.Geometry
 {
     public static class Approximation
     {
@@ -42,15 +44,8 @@
             return valueString.PadRight( indexOfFractionPoint + 1 + validLengthOfFractionPart, '0' );
         }
 
-        static bool IsFractionPartAllZero( string fractionPart )
-        {
-            var charArray = fractionPart.ToCharArray();
-            for (int i = 0; i < charArray.Length; ++i) {
-                if (charArray[ i ] != '0')
-                    return false;
-            }
-            return true;
-        }
+        static bool IsFractionPartAllZero( string fractionPart ) =>
+            fractionPart.ToArray().All(c => c == '0');
 
         public static string ToApproximatedString( Vector3d point ) =>
             ToApproximatedString( point, ValidLengthOfFractionPart );

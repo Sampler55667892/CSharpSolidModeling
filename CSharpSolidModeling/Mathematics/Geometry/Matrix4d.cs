@@ -48,8 +48,8 @@ namespace Mathematics.Geometry
         public bool IsIdentity
         {
             get {
-                for (int i = 0; i < 4; ++i) {
-                    for (int j = 0; j < 4; ++j) {
+                for (var i = 0; i < 4; ++i) {
+                    for (var j = 0; j < 4; ++j) {
                         if (i == j) {
                             if (!Tolerance.IsIgnorable( contents[ i, j ] - 1 ))
                                 return false;
@@ -69,8 +69,8 @@ namespace Mathematics.Geometry
         public bool IsZero
         {
             get {
-                for (int i = 0; i < 4; ++i) {
-                    for (int j = 0; j < 4; ++j) {
+                for (var i = 0; i < 4; ++i) {
+                    for (var j = 0; j < 4; ++j) {
                         if (!Tolerance.IsIgnorable( contents[ i, j ] ))
                             return false;
                     }
@@ -316,10 +316,10 @@ namespace Mathematics.Geometry
 
             var contents = new double[ 4, 4 ];
 
-            for (int i = 0; i < 4; ++i) {
-                for (int j = 0; j < 4; ++j) {
+            for (var i = 0; i < 4; ++i) {
+                for (var j = 0; j < 4; ++j) {
                     contents[ i, j ] = 0;
-                    for (int k = 0; k < 4; ++k)
+                    for (var k = 0; k < 4; ++k)
                         contents[ i, j ] += m0[ i, k ] * m1[ k, j ];
                 }
             }
@@ -327,9 +327,9 @@ namespace Mathematics.Geometry
         }
 
         public static Vector4d operator *( Matrix4d m, Vector4d v ) =>
-            new Vector4d( m.M11 * v.X + m.M12 * v.Y + m.M13 * v.Z + m.M14 * v.W ,
-                          m.M21 * v.X + m.M22 * v.Y + m.M23 * v.Z + m.M24 * v.W ,
-                          m.M31 * v.X + m.M32 * v.Y + m.M33 * v.Z + m.M34 * v.W ,
+            new Vector4d( m.M11 * v.X + m.M12 * v.Y + m.M13 * v.Z + m.M14 * v.W,
+                          m.M21 * v.X + m.M22 * v.Y + m.M23 * v.Z + m.M24 * v.W,
+                          m.M31 * v.X + m.M32 * v.Y + m.M33 * v.Z + m.M34 * v.W,
                           m.M41 * v.X + m.M42 * v.Y + m.M43 * v.Z + m.M44 * v.W );
 
         public static Vector3d operator *( Matrix4d m, Vector3d v )
@@ -374,8 +374,8 @@ namespace Mathematics.Geometry
                 return false;
 
             // 例えば contents が 1 * 16, 2 * 8 の配列の場合は例外を飛ばす
-            for (int i = 0; i < 4; ++i) {
-                for (int j = 0; j < 4; ++j)
+            for (var i = 0; i < 4; ++i) {
+                for (var j = 0; j < 4; ++j)
                     this.contents[ i, j ] = contents[ i, j ];
             }
             return true;

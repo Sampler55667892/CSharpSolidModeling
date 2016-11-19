@@ -68,17 +68,17 @@ namespace Solid
         public string _GetEulerPoincareFormula()
         {
             int countVertices = this._VertexSet.Count;
-            int countEdges    = this._EdgeSet  .Count;
-            int countLoops    = this._LoopSet  .Count;
-            int countFaces    = this.faces     .Count;
+            int countEdges = this._EdgeSet.Count;
+            int countLoops = this._LoopSet.Count;
+            int countFaces = this.faces.Count;
 
             return
                 "V - E + F - (L - F) = " +
                 countVertices.ToString() + " - " +
-                countEdges   .ToString() + " + " +
-                countFaces   .ToString() + " - (" +
-                countLoops   .ToString() + " - " +
-                countFaces   .ToString() + ") = " +
+                countEdges.ToString() + " + " +
+                countFaces.ToString() + " - (" +
+                countLoops.ToString() + " - " +
+                countFaces.ToString() + ") = " +
                 (countVertices - countEdges + countFaces - (countLoops - countFaces)).ToString() +
                 " (2S = 2)";
         }

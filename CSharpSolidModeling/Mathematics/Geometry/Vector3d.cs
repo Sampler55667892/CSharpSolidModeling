@@ -131,8 +131,8 @@ namespace Mathematics.Geometry
             // 　|v1.X  v1.Y  v1.Z|
             // 　|i     j     k   |
             return
-                new Vector3d( v0.Y * v1.Z - v0.Z * v1.Y ,
-                              v0.Z * v1.X - v0.X * v1.Z ,
+                new Vector3d( v0.Y * v1.Z - v0.Z * v1.Y,
+                              v0.Z * v1.X - v0.X * v1.Z,
                               v0.X * v1.Y - v0.Y * v1.X );
         }
 

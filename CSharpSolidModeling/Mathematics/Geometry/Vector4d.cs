@@ -32,7 +32,7 @@ namespace Mathematics.Geometry
             this.X = vector.X;
             this.Y = vector.Y;
             this.Z = vector.Z;
-            this.W =        1;
+            this.W = 1;
         }
 
         #region operators

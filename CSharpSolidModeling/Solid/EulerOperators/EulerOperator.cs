@@ -33,11 +33,11 @@ namespace Solid
 
         public Vertex MevSpurEv( Vector3d vertexPosition, Vertex startVertex, Edge prevLeftEdge,
             Edge prevRightEdge, out Edge newEdge ) =>
-            mev.SpurEv( vertexPosition, startVertex, prevLeftEdge, prevRightEdge, out newEdge );
+            mev.DoSpurEv( vertexPosition, startVertex, prevLeftEdge, prevRightEdge, out newEdge );
 
         public Vertex MevSplitE( Vector3d vertexPosition, Edge splitTargetEdge, bool newVertexIsEnd,
             out Edge newEdge ) =>
-            mev.SplitE( vertexPosition, splitTargetEdge, newVertexIsEnd, out newEdge );
+            mev.DoSplitE( vertexPosition, splitTargetEdge, newVertexIsEnd, out newEdge );
 
         // MEV_SplitV...
 

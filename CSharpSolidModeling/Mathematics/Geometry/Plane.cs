@@ -115,16 +115,16 @@ namespace Mathematics.Geometry
 
             var lineSegments =
                 new [] {
-                    new LineSegment( triangle.Point0, triangle.Point1 ) ,
-                    new LineSegment( triangle.Point1, triangle.Point2 ) ,
+                    new LineSegment( triangle.Point0, triangle.Point1 ),
+                    new LineSegment( triangle.Point1, triangle.Point2 ),
                     new LineSegment( triangle.Point2, triangle.Point0 ) };
 
             var result = new List<Vector3d>();
 
-            for (int i = 0; i < lineSegments.Length; ++i) {
+            for (var i = 0; i < lineSegments.Length; ++i) {
                 var tempIntersection = GetIntersection( lineSegments[ i ] );
                 if (tempIntersection.HasValue) {
-                    string key = Approximation.ToApproximatedString( tempIntersection.Value );
+                    var key = Approximation.ToApproximatedString( tempIntersection.Value );
                     if (!intersections.Contains( key )) {
                         intersections.Add( key );
                         result.Add( tempIntersection.Value );
