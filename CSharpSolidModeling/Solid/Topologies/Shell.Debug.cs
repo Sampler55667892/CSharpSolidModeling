@@ -18,10 +18,8 @@ namespace Solid
                         if (!vertices.Contains( l.Isolated ))
                             vertices.Add( l.Isolated );
                     } else {
-                        foreach (var v in l.VerticesRing) {
-                            if (!vertices.Contains( v ))
-                                vertices.Add( v );
-                        }
+                        foreach (var v in l.VerticesRing)
+                            vertices.Add( v );
                     }
                 }
                 return vertices;
@@ -37,10 +35,8 @@ namespace Solid
                 foreach (var l in loops) {
                     if (l.Isolated != null)
                         continue;
-                    foreach (var e in l.EdgesRing) {
-                        if (!edges.Contains( e ))
-                            edges.Add( e );
-                    }
+                    foreach (var e in l.EdgesRing)
+                        edges.Add( e );
                 }
                 return edges;
             }
@@ -56,10 +52,8 @@ namespace Solid
                         loops.Add( f.Frame );
                     if (!f.HasHoles)
                         continue;
-                    foreach (var h in f.Holes) {
-                        if (!loops.Contains( h ))
-                            loops.Add( h );
-                    }
+                    foreach (var h in f.Holes)
+                        loops.Add( h );
                 }
                 return loops;
             }

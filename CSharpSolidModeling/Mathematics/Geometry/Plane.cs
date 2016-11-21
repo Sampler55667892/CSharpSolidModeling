@@ -125,10 +125,8 @@ namespace Mathematics.Geometry
                 var tempIntersection = GetIntersection( lineSegments[ i ] );
                 if (tempIntersection.HasValue) {
                     var key = Approximation.ToApproximatedString( tempIntersection.Value );
-                    if (!intersections.Contains( key )) {
-                        intersections.Add( key );
+                    if (intersections.Add( key ))
                         result.Add( tempIntersection.Value );
-                    }
                 }
             }
 
